@@ -1,0 +1,5 @@
+{% macro navbar_link(url, title, icon=None) -%}
+<li{% if request.path.startswith(url) %} class="active"{% endif %}>
+<a href="{{ url }}">{% if icon %}<i class="fa {{ icon }}"></i> {% endif %}{{ title }}</a></li>
+{%- endmacro %}
+

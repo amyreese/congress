@@ -1,0 +1,71 @@
+{% from "macros.html" import navbar_link with context %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title | capitalize }}</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
+
+        <link rel="stylesheet" href="/static/css/main.css"/>
+        <link rel="icon" href="/static/img/favicon.ico"/>
+
+        {% block head %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="/"><i class="fa fa-flask"></i> Flaskstrap</a>
+                </div>
+
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {# {{ navbar_link('/about', 'About', 'fa-info-circle') }} #}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+        {%- block content %}
+        {%- endblock %}
+        </div>
+
+        <div class="container footer">
+            <center><small class="text-muted">
+                <i class="fa fa-flask"></i> Flaskstrap • Created by <a href="https://noswap.com" class="muted">John Reese</a><br/>
+                Licensed under the <a href="http://opensource.org/licenses/mit-license.html">MIT license</a><br/>
+                <a href="https://github.com/jreese/flaskstrap" class="muted"><i class="fa fa-github"></i> Github project</a>
+            </small></center>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+        {%- if GA_ACCOUNT %}
+        <script type="text/javascript">
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', '{{ GA_ACCOUNT }}']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = 'https://ssl.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+        </script>
+        {%- endif %}
+    </body>
+</html>
