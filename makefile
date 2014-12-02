@@ -8,6 +8,9 @@ shell:
 lint:
 	flake8 --show-source .
 
+tests: lint
+	python app.wsgi --no-run
+
 .PHONY:
 clean:
 	find . -name '*.pyc' -delete

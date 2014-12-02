@@ -30,5 +30,8 @@ if __name__ == '__main__':
         print("\nflaskstrap debug shell")
         print(">>> from core import app")
 
+    if '--no-run':
+        pass
+
     else:
         app.run()
