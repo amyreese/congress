@@ -9,7 +9,7 @@ from __future__ import unicode_literals
 from functools import wraps
 import re
 
-from flask import g, make_response, render_template, request
+from flask import make_response, render_template, request
 from jinja2.utils import Markup
 
 from . import app, encoder
@@ -17,8 +17,10 @@ from .routing import _fullpath, _titles
 
 whitespace_regex = re.compile(r'\s*(</?[^>]+>)\s*')
 
+
 def template(template, status=200, minify=False):
-    """Use the given template for the page, using the returned dictionary for template values."""
+    """Use the given template for the page, using the returned dictionary for
+    template values."""
     def decorator(f):
         template_name = _fullpath(template)
 
@@ -40,14 +42,17 @@ def template(template, status=200, minify=False):
         return decorated_function
     return decorator
 
+
 def update_template_parameters(params):
-    """Modify the given dictionary of template parameters with default values."""
+    """Modify the given dictionary of template parameters with default
+    values."""
     for key in ('GA_ACCOUNT', ):
         if key in app.config:
             params[key] = app.config[key]
 
     if 'title' not in params and request.path in _titles:
         params['title'] = _titles[request.path]
+
 
 @app.template_filter()
 def time(t=None, f='%Y-%m-%d %I:%M %p'):
@@ -58,15 +63,18 @@ def time(t=None, f='%Y-%m-%d %I:%M %p'):
     s = time.strftime(f, time.gmtime(t))
     return s
 
+
 @app.template_filter()
 def date(t=None, f='%Y-%m-%d'):
     """Format a timestamp to year, month, and day."""
     return time(t, f)
 
+
 @app.template_filter()
 def count(o):
     """Output the length of the given iterable object."""
     return len(o)
+
 
 @app.template_filter()
 def json(o):

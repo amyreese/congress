@@ -14,6 +14,7 @@ from . import app
 host = app.config['MC_URI']
 mc = memcache.Client([host])
 
+
 class mcdict(dict):
     """Memcache-backed dictionary."""
 
@@ -41,7 +42,7 @@ class mcdict(dict):
     def __repr__(self):
         return '<mcdict {0}: {1}>'.format(self.__key, dict.__repr__(self))
 
-    ### dict modify method mappings ###
+    # dict modify method mappings
 
     def __setitem__(self, key, value):
         rv = dict.__setitem__(self, key, value)
@@ -63,11 +64,14 @@ class mcdict(dict):
         self.__save()
         return rv
 
+
 def cache_method(self):
     mc.set(self._mc_key, pickle.dumps(self))
 
+
 def flush_method(self):
     mc.delete(self._mc_key)
+
 
 class Cacheable(type):
     """Metaclass for creating Memcached-backed objects.
@@ -119,5 +123,6 @@ class Cacheable(type):
         else:
             obj = pickle.loads(obj)
             if type(obj) != cls:
-                raise Exception('mc key {} already in use by non-{} value'.format(mc_key, classname))
+                raise Exception('mc key {} already in use by non-{} value'
+                                .format(mc_key, classname))
             return obj
