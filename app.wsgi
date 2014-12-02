@@ -19,9 +19,15 @@ from core import app
 import views
 
 if __name__ == '__main__':
-    if sys.flags.interactive:
-        print("debug shell")
+    interactive = sys.flags.interactive
+    try:
+        __IPYTHON__
+        interactive = True
+    except NameError:
+        pass
 
+    if interactive:
+        print("\nflaskstrap debug shell")
         print(">>> from core import app")
 
     else:

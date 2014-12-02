@@ -3,7 +3,7 @@ server:
 	python app.wsgi
 
 shell:
-	python -i app.wsgi
+	@which ipython && ipython -i app.wsgi || python -i app.wsgi
 
 .PHONY:
 clean:
