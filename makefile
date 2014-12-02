@@ -8,7 +8,7 @@ shell:
 lint:
 	flake8 --show-source .
 
-tests: lint
+test: lint
 	python app.wsgi --no-run
 
 .PHONY:

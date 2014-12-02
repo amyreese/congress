@@ -1,11 +1,14 @@
 language: python
 python:
     - "2.7"
+    - "3.3"
     - "3.4"
+    - "pypy"
 install:
-    - "pip install -r requirements.txt"
-    - "pip install flake8 ipython"
-script: make tests
+    - "pip install -r requirements.txt --use-mirrors"
+    - "pip install flake8 ipython --use-mirrors"
+script:
+    - "make test"
 notifications:
     email: false
     irc:
