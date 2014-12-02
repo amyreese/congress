@@ -6,6 +6,8 @@ Flaskstrap is a small web framework, based on [Flask][], that integrates
 and a cohesive set of decorators, to make it even easier to get web
 applications ... well, bootstrapped!
 
+[![Build status](https://travis-ci.org/jreese/flaskstrap.svg)](https://travis-ci.org/jreese/flaskstrap)
+
 
 Legal
 -----
