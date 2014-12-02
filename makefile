@@ -5,6 +5,9 @@ server:
 shell:
 	@which ipython && ipython -i app.wsgi || python -i app.wsgi
 
+lint:
+	flake8 --show-source .
+
 .PHONY:
 clean:
 	find . -name '*.pyc' -delete
