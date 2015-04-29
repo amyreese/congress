@@ -28,7 +28,7 @@ if __name__ == '__main__':
         pass
 
     if interactive:
-        print("\nflaskstrap debug shell")
+        print("\ncongress debug shell")
         print(">>> from core import app")
 
     if '--no-run' in sys.argv:
