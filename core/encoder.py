@@ -1,4 +1,4 @@
-# Copyright 2014 John Reese
+# Copyright 2015 John Reese
 # Licensed under the MIT license
 
 from __future__ import absolute_import
