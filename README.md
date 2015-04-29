@@ -1,21 +1,27 @@
-Flaskstrap
-==========
+Congress
+========
 
-Flaskstrap is a small web framework, based on [Flask][], that integrates
-[Bootstrap][] and [Font Awesome][].  It provides a simple project layout,
-and a cohesive set of decorators, to make it even easier to get web
-applications ... well, bootstrapped!
+Congress is a search engine passthrough service, with customizable shortcut
+patterns.  This means you can replace your preferred search engine, such as
+Google or [DuckDuckGo][], with Congress, and use special patterns to instead
+search elsewhere, or have shortcuts that take you to predictable URL paths.
 
-[![Build status](https://travis-ci.org/jreese/flaskstrap.svg)](https://travis-ci.org/jreese/flaskstrap)
+For example, searching for the phrase "w psychology" could take you directly
+to the search results on Wikipedia for "psychology"; searching "y rick astley"
+could take you to YouTube results; and any search that doesn't trigger these
+custom patterns could fall back to your search engine of preference.
+
+[![Build status](https://travis-ci.org/jreese/congress.svg)](https://travis-ci.org/jreese/congress)
+
+Congress is built on [Flaskstrap][].
 
 
 Legal
 -----
 
-Flaskstrap is copyright [John Reese][], and licensed under the MIT license.
+Congress is copyright [John Reese][], and licensed under the MIT license.
 
 
 [John Reese]: https://noswap.com
-[Flask]: http://flask.pocoo.org/
-[Bootstrap]: http://getbootstrap.com/
-[Font Awesome]: http://fortawesome.github.io/Font-Awesome/
+[Flaskstrap]: https://github.com/jreese/flaskstrap/
+[DuckDuckGo]: https://duckduckgo.com/
