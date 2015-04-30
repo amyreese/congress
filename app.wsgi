@@ -31,7 +31,7 @@ if __name__ == '__main__':
         print("\nflaskstrap debug shell")
         print(">>> from core import app")
 
-    if '--no-run':
+    if '--no-run' in sys.argv:
         pass
 
     else:
