@@ -2,6 +2,9 @@
 # generate with `openssl rand -base64 32`
 SESSION_KEY = "BeTT4t0DIQfrfrf9vpJ1k+JwHWNpn+42+5kpB0UnGOI="
 
+# Prefix for all site URLs
+SITE_ROOT = ""
+
 # Prefix for @api URLs
 API_ROOT = "/api"
 

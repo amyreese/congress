@@ -1,4 +1,4 @@
-{% from "macros.html" import navbar_link with context %}
+{% from "macros.html" import navbar_link, fullpath with context %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"/>
 
-        <link rel="stylesheet" href="/static/css/main.css"/>
-        <link rel="icon" href="/static/img/favicon.ico"/>
+        <link rel="stylesheet" href="{{ fullpath("/static/css/main.css") }}"/>
+        <link rel="icon" href="{{ fullpath("/static/img/favicon.ico") }}"/>
 
         {% block head %}
         {% endblock %}
@@ -27,12 +27,12 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a class="navbar-brand" href="/"><i class="fa fa-flask"></i> Flaskstrap</a>
+                    <a class="navbar-brand" href="{{ fullpath("/") }}"><i class="fa fa-flask"></i> Flaskstrap</a>
                 </div>
 
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        {# {{ navbar_link('/about', 'About', 'fa-info-circle') }} #}
+                        {# {{ navbar_link(fullpath('/about'), 'About', 'fa-info-circle') }} #}
                     </ul>
                 </div>
             </div>

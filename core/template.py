@@ -13,7 +13,7 @@ from flask import make_response, render_template, request
 from jinja2.utils import Markup
 
 from . import app, encoder
-from .routing import _fullpath, _titles
+from .routing import fullpath, _titles
 
 whitespace_regex = re.compile(r'\s*(</?[^>]+>)\s*')
 
@@ -22,7 +22,7 @@ def template(template, status=200, minify=False):
     """Use the given template for the page, using the returned dictionary for
     template values."""
     def decorator(f):
-        template_name = _fullpath(template)
+        template_name = fullpath(template, base='')
 
         @wraps(f)
         def decorated_function(*args, **kwargs):
@@ -46,7 +46,7 @@ def template(template, status=200, minify=False):
 def update_template_parameters(params):
     """Modify the given dictionary of template parameters with default
     values."""
-    for key in ('GA_ACCOUNT', ):
+    for key in ('GA_ACCOUNT', 'SITE_ROOT'):
         if key in app.config:
             params[key] = app.config[key]
 
@@ -80,3 +80,9 @@ def count(o):
 def json(o):
     """Dump an object to json."""
     return Markup(encoder.dumps(o))
+
+
+@app.template_filter()
+def url(u):
+    """Convert a service-absolute path to a site-absolute path."""
+    return fullpath(u)

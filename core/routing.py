@@ -46,10 +46,21 @@ class context(object):
         _context.pop(0)
 
 
+def fullpath(*parts, base=None):
+    """Generate the full URL path using the currently active path contexts."""
+    if base is None:
+        base = app.config['SITE_ROOT']
+
+    parts = [base] + _context[-1::-1] + list(parts)
+    rv = ''.join(parts)
+
+    return rv
+
+
 def get(url, title=None, cache=True, cache_time=300):
     """Route the given URL for GET methods."""
     def decorator(f):
-        full_url = _fullpath(url)
+        full_url = fullpath(url)
         if title is not None:
             _titles[full_url] = title
 
@@ -77,7 +88,7 @@ def get(url, title=None, cache=True, cache_time=300):
 
 def post(url):
     """Route the given URL for POST methods."""
-    return app.route(_fullpath(url), methods=['POST'])
+    return app.route(fullpath(url), methods=['POST'])
 
 
 api_help = {}
@@ -87,7 +98,7 @@ def api(api_url, methods=['GET', 'POST', 'PUT'], format='application/json',
         split_payload=False, cache=False, cache_time=300):
     """Route the given API url over multiple HTTP methods, automatically
     converting between JSON and objects."""
-    full_url = app.config['API_ROOT'] + _fullpath(api_url)
+    full_url = fullpath(app.config['API_ROOT'], api_url)
 
     def decorator(f):
         # Build API listing for any method with a docstring
@@ -168,9 +179,3 @@ def api(api_url, methods=['GET', 'POST', 'PUT'], format='application/json',
 
         return decorated_function
     return decorator
-
-
-def _fullpath(url):
-    """Generate the full URL path using the currently active path contexts."""
-    rv = ''.join(_context[-1::-1]) + url
-    return rv

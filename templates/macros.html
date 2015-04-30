@@ -3,3 +3,6 @@
 <a href="{{ url }}">{% if icon %}<i class="fa {{ icon }}"></i> {% endif %}{{ title }}</a></li>
 {%- endmacro %}
 
+{%- macro fullpath(url) -%}
+{{ SITE_ROOT }}{{ url }}
+{%- endmacro -%}
