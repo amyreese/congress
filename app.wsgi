@@ -31,8 +31,12 @@ if __name__ == '__main__':
         print("\ncongress debug shell")
         print(">>> from core import app")
 
+        from congress import Congress
+        print(">>> from congress import Congress")
+
     if '--no-run' in sys.argv:
         pass
 
     else:
+        print('running')
         app.run()

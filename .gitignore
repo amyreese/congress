@@ -1,4 +1,5 @@
 config.local
+triggers.local.json
 error.log
 
 *.py[co]

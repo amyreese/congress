@@ -20,3 +20,10 @@ DB_PATH = ""
 
 # Memcached options
 MC_URI = "127.0.0.1:11211" # host:port
+
+# Search preferences
+DEFAULT_SEARCH = "https://duckduckgo.com/?q={query}"
+TRIGGER_PATHS = [
+    'triggers.json',
+    'triggers.local.json',
+]

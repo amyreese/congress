@@ -1,0 +1,5 @@
+{
+	"g ": "https://www.google.com/search?q={params}",
+	"ddg ": "https://duckduckgo.com/?q={params}",
+	"py ": "site:python.org {params}"
+}
