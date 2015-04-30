@@ -28,3 +28,9 @@ def search(q=''):
     url = Congress.instance().search(q)
 
     return {'url': url}
+
+
+@get('/opensearch.xml', 'Congress')
+@template('/opensearch.xml')
+def opensearch():
+    return {}
