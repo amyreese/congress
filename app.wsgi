@@ -16,6 +16,7 @@ sys.path.insert(0, cwd)
 os.environ['APP_PATH'] = cwd
 
 from core import app
+from core import app as application
 import views
 
 if __name__ == '__main__':
