@@ -10,10 +10,10 @@ LOG_CONSOLE = True
 LOG_FILE = "error.log"
 
 # Google Analytics
-GA_ACCOUNT = "aoeu"
+GA_ACCOUNT = ""
 
 # Database options
-DB_PATH = ""  # path to seinfeld quote database
+DB_PATH = ""
 
 # Memcached options
 MC_URI = "127.0.0.1:11211" # host:port
