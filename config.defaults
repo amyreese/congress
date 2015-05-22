@@ -4,10 +4,10 @@ SESSION_KEY = "BeTT4t0DIQfrfrf9vpJ1k+JwHWNpn+42+5kpB0UnGOI="
 
 # Domain to use when searching from browsers
 # Include port here if other than 443/80
-SITE_DOMAIN = "127.0.0.1"
+SITE_DOMAIN = "127.0.0.1:5000"
 
-# Use secure HTTPS by default
-SITE_PROTOCOL = "https"
+# Please use secure HTTPS if possible
+SITE_PROTOCOL = "http"
 
 # Prefix for all site URLs
 SITE_ROOT = ""
