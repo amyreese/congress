@@ -1,5 +1,11 @@
 {
-	"g ": "https://www.google.com/search?q={params}",
-	"ddg ": "https://duckduckgo.com/?q={params}",
-	"py ": "site:python.org {params}"
+    "? ": "{params}",
+    "! ": "\\ {params}",
+    "d ": "https://duckduckgo.com/?q={params}",
+    "g ": "https://encrypted.google.com/search?q={params}",
+    "w ": "\\ site:wikipedia.org {params}",
+    "y ": "\\ site:youtube.com {params}",
+    "py ": "\\ site:python.org {params}",
+    "arch ": "site:archlinux.org {params}",
+    "aur ": "\\ site:aur.archlinux.org {params}"
 }
