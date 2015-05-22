@@ -1,6 +1,6 @@
 {
-    "? ": "{params}",
-    "! ": "\\ {params}",
+    "\\? ": "{params}",
+    "\\! ": "\\ {params}",
     "d ": "https://duckduckgo.com/?q={params}",
     "g ": "https://encrypted.google.com/search?q={params}",
     "w ": "\\ site:wikipedia.org {params}",
