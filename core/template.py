@@ -46,7 +46,7 @@ def template(template, status=200, minify=False):
 def update_template_parameters(params):
     """Modify the given dictionary of template parameters with default
     values."""
-    for key in ('GA_ACCOUNT', 'SITE_ROOT'):
+    for key in ('GA_ACCOUNT', 'SITE_DOMAIN', 'SITE_PROTOCOL', 'SITE_ROOT'):
         if key in app.config:
             params[key] = app.config[key]
 

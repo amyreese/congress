@@ -2,6 +2,13 @@
 # generate with `openssl rand -base64 32`
 SESSION_KEY = "BeTT4t0DIQfrfrf9vpJ1k+JwHWNpn+42+5kpB0UnGOI="
 
+# Domain to use when searching from browsers
+# Include port here if other than 443/80
+SITE_DOMAIN = "127.0.0.1"
+
+# Use secure HTTPS by default
+SITE_PROTOCOL = "https"
+
 # Prefix for all site URLs
 SITE_ROOT = ""
 

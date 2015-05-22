@@ -4,5 +4,5 @@
 {%- endmacro %}
 
 {%- macro fullpath(url) -%}
-{{ SITE_ROOT }}{{ url }}
+{{ SITE_PROTOCOL }}://{{ SITE_DOMAIN }}{{ SITE_ROOT }}{{ url }}
 {%- endmacro -%}

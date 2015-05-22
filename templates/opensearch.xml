@@ -1,8 +1,9 @@
+{%- from "macros.html" import fullpath with context -%}
 <?xml version="1.0" encoding="utf-8"?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
     <ShortName>{{ title }}</ShortName>
     <Description>Search {{ title }}</Description>
     <InputEncoding>UTF-8</InputEncoding>
     <LongName>{{ title }} Search</LongName>
-    <Url type="text/html" method="get" template="https://127.0.0.1:5000/?q={searchTerms}"/>
+    <Url type="text/html" method="get" template="{{ fullpath('/') }}?q={searchTerms}"/>
 </OpenSearchDescription>
