@@ -22,4 +22,6 @@ class Trigger(Ent):
         named = match.groupdict()
         params = query[match.end():].strip()
 
-        return self.url.format(*positional, query=query, params=params, **named)
+        return self.url.format(
+            *positional, query=query, params=params, **named,
+        )

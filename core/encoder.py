@@ -23,6 +23,8 @@ def dump(obj, pretty=True):
         indent = 4
 
     return json.dumps(obj, cls=Encoder, indent=indent)
+
+
 dumps = dump
 
 
