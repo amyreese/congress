@@ -1,15 +1,15 @@
 
 server:
-	python app.wsgi
+	python3 app.wsgi
 
 shell:
-	@which ipython && ipython -i app.wsgi || python -i app.wsgi
+	@which ipython3 && ipython3 -i app.wsgi || python3 -i app.wsgi
 
 lint:
 	flake8 --show-source .
 
 test: lint
-	python app.wsgi --no-run
+	python3 app.wsgi --no-run
 
 .PHONY:
 clean:
