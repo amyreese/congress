@@ -1,11 +1,16 @@
 {
-    "\\? ": "{params}",
-    "\\! ": "\\ {params}",
+    "\\? ": "d {params}",
+    "\\! ": "d \\ {params}",
     "d ": "https://duckduckgo.com/?q={params}",
     "g ": "https://encrypted.google.com/search?q={params}",
-    "w ": "\\ site:wikipedia.org {params}",
-    "y ": "\\ site:youtube.com {params}",
-    "py ": "\\ site:python.org {params}",
+    "w ": "! site:wikipedia.org {params}",
+    "y ": "! site:youtube.com {params}",
+    "py ": "! site:python.org/3/ {params}",
+    "py3 ": "! site:python.org/3/ {params}",
+    "py2 ": "! site:python.org/2/ {params}",
+    "pypi ": "https://pypi.org/project/{params}/",
+    "pip ": "pypi {params}",
+    "pep ": "https://www.python.org/dev/peps/pep-{params:0>4}/",
     "arch ": "site:archlinux.org {params}",
-    "aur ": "\\ site:aur.archlinux.org {params}"
+    "aur ": "! site:aur.archlinux.org {params}"
 }
