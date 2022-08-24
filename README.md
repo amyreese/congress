@@ -11,7 +11,7 @@ to the search results on Wikipedia for "psychology"; searching "y rick astley"
 could take you to YouTube results; and any search that doesn't trigger these
 custom patterns could fall back to your search engine of preference.
 
-[![Build status](https://travis-ci.org/jreese/congress.svg)](https://travis-ci.org/jreese/congress)
+[![Build status](https://travis-ci.org/amyreese/congress.svg)](https://travis-ci.org/amyreese/congress)
 
 Congress is built on [Flaskstrap][].
 
@@ -19,9 +19,9 @@ Congress is built on [Flaskstrap][].
 Legal
 -----
 
-Congress is copyright [John Reese][], and licensed under the MIT license.
+Congress is copyright [Amethyst Reese][], and licensed under the MIT license.
 
 
-[John Reese]: https://noswap.com
-[Flaskstrap]: https://github.com/jreese/flaskstrap/
+[Amethyst Reese]: https://noswap.com
+[Flaskstrap]: https://github.com/amyreese/flaskstrap/
 [DuckDuckGo]: https://duckduckgo.com/
